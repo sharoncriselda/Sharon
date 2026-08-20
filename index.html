@@ -3,10 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>DemandGap - Customer Demand Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple HTML page.</p>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>DemandGap</h2>
+        <p class="subtitle">Retail Intelligence</p>
+
+        <nav>
+            <a href="#" class="active">📊 Dashboard</a>
+            <a href="#">🔍 Search Demand</a>
+            <a href="#">📦 Inventory</a>
+            <a href="#">⚠️ Demand Gaps</a>
+            <a href="#">📈 Analytics</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header>
+            <div>
+                <h1>Customer Demand Dashboard</h1>
+                <p>Identify products customers want but cannot find.</p>
+            </div>
+
+            <button class="upload-btn" onclick="showUploadMessage()">
+                + Upload Data
+            </button>
+        </header>
+
+        <!-- Statistics Cards -->
+        <section class="stats">
+
+            <div class="card">
+                <div class="icon">🔍</div>
+                <div>
+                    <p>Total Searches</p>
+                    <h2 id="totalSearches">12,450</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚠️</div>
+                <div>
+                    <p>Unmet Demand</p>
+                    <h2 id="unmetDemand">1,240</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">📦</div>
+                <div>
+                    <p>Low Inventory</p>
+                    <h2>8 Products</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">💰</div>
+                <div>
+                    <p>Opportunity Score</p>
+                    <h2>82%</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Alert -->
+        <section class="alert">
+            <div>
+                <h3>⚠ High Demand Opportunity</h3>
+                <p>
+                    Several products are being searched frequently but have low or zero inventory.
+                </p>
+            </div>
+
+            <button onclick="showGaps()">View Demand Gaps</button>
+        </section>
+
+        <!-- Search -->
+        <section class="controls">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for a product..."
+                onkeyup="searchProducts()"
+            >
+
+            <select id="filterSelect" onchange="filterProducts()">
+                <option value="all">All Products</option>
+                <option value="high">High Demand</option>
+                <option value="gap">Demand Gap</option>
+                <option value="available">Available</option>
+            </select>
+        </section>
+
+        <!-- Table -->
+        <section class="table-section">
+
+            <div class="section-title">
+                <h2>Product Demand Analysis</h2>
+                <p>Compare customer search interest with inventory.</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Search Interest</th>
+                        <th>Inventory</th>
+                        <th>Demand Gap</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="productTable">
+
+                    <tr data-status="gap">
+                        <td>Wireless Headphones</td>
+                        <td>2,450 searches</td>
+                        <td>12 units</td>
+                        <td class="gap-high">High</td>
+                        <td><span class="status danger">Unmet Demand</span></td>
+                    </tr>
+
+                    <tr data-status="available">
+                        <td>Gaming Keyboard</td>
+                        <td>1,980 searches</td>
+                        <td>245 units</td>
+                        <td class="gap-low">Low</td>
+                        <td><span class="status success">Available</span></td>
+                    </tr>
+
+                    <tr data-status="gap">
+                        <td>iPhone Charger</td>
+                        <td>1,750 searches</td>
+                        <td>5 units</td>
+                        <td class="gap-high">High</td>
+                        <td><span class="status danger">Unmet Demand</span></td>
+                    </tr>
+
+                    <tr data-status="high">
+                        <td>Bluetooth Speaker</td>
+                        <td>1,620 searches</td>
+                        <td>30 units</td>
+                        <td class="gap-medium">Medium</td>
+                        <td><span class="status warning">Low Stock</span></td>
+                    </tr>
+
+                    <tr data-status="available">
+                        <td>Laptop Stand</td>
+                        <td>980 searches</td>
+                        <td>150 units</td>
+                        <td class="gap-low">Low</td>
+                        <td><span class="status success">Available</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </section>
+
+        <!-- Recommendation -->
+        <section class="recommendation">
+            <h2>💡 Recommended Action</h2>
+            <p id="recommendationText">
+                Increase inventory for <strong>Wireless Headphones</strong> and
+                <strong>iPhone Chargers</strong>. These products have high search
+                interest but very low inventory.
+            </p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
