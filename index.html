@@ -1,674 +1,743 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DemandGap | Retail Intelligence</title>
+    <title>DemandGap — Retail Intelligence</title>
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- Animated Background -->
-  <div class="background">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="grid"></div>
-  </div>
+    <!-- ANIMATED BACKGROUND -->
+    <div class="background">
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div class="aurora aurora-three"></div>
 
-    <div class="logo">
-      <div class="logo-icon">
-        <i class="fa-solid fa-chart-line"></i>
-      </div>
+        <div class="grid"></div>
 
-      <div>
-        <h2>Demand<span>Gap</span></h2>
-        <p>Retail Intelligence</p>
-      </div>
+        <div id="particles"></div>
+
+        <div class="spotlight"></div>
+
     </div>
 
-    <nav>
-      <a href="#" class="nav-item active">
-        <i class="fa-solid fa-table-columns"></i>
-        <span>Dashboard</span>
-      </a>
 
-      <a href="#" class="nav-item">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <span>Search Demand</span>
-      </a>
+    <!-- APP -->
+    <div class="app">
 
-      <a href="#" class="nav-item">
-        <i class="fa-solid fa-box"></i>
-        <span>Inventory</span>
-      </a>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
 
-      <a href="#" class="nav-item">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <span>Demand Gaps</span>
-      </a>
+            <div class="brand">
 
-      <a href="#" class="nav-item">
-        <i class="fa-solid fa-chart-column"></i>
-        <span>Analytics</span>
-      </a>
-    </nav>
+                <div class="brand-icon">
+                    <div class="icon-glow"></div>
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
 
-    <div class="sidebar-bottom">
-      <div class="user-profile">
-        <div class="avatar">SO</div>
+                <div class="brand-text">
+                    <h2>Demand<span>Gap</span></h2>
+                    <p>RETAIL INTELLIGENCE</p>
+                </div>
 
-        <div>
-          <strong>Store Owner</strong>
-          <small>Premium Account</small>
-        </div>
-      </div>
-    </div>
-
-  </aside>
-
-
-  <!-- Main Content -->
-  <main class="main-content">
-
-    <!-- Header -->
-    <header>
-
-      <div class="header-text">
-        <p class="welcome">RETAIL INTELLIGENCE PLATFORM</p>
-
-        <h1>
-          Customer Demand
-          <span>Dashboard</span>
-        </h1>
-
-        <p>
-          Discover what your customers want before inventory runs out.
-        </p>
-      </div>
-
-      <button class="upload-btn" onclick="showUploadMessage()">
-        <i class="fa-solid fa-cloud-arrow-up"></i>
-        Upload Data
-      </button>
-
-    </header>
-
-
-    <!-- Statistics -->
-    <section class="stats">
-
-      <div class="stat-card">
-        <div class="stat-icon blue">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-
-        <div class="stat-info">
-          <p>Total Searches</p>
-          <h2 class="counter" data-target="12450">0</h2>
-          <small>
-            <i class="fa-solid fa-arrow-trend-up"></i>
-            18.4% this month
-          </small>
-        </div>
-      </div>
-
-
-      <div class="stat-card">
-        <div class="stat-icon red">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
-
-        <div class="stat-info">
-          <p>Unmet Demand</p>
-          <h2 class="counter" data-target="1240">0</h2>
-          <small>
-            <i class="fa-solid fa-arrow-trend-up"></i>
-            12 products affected
-          </small>
-        </div>
-      </div>
-
-
-      <div class="stat-card">
-        <div class="stat-icon orange">
-          <i class="fa-solid fa-box-open"></i>
-        </div>
-
-        <div class="stat-info">
-          <p>Low Inventory</p>
-          <h2 class="counter" data-target="8">0</h2>
-          <small>Products need restocking</small>
-        </div>
-      </div>
-
-
-      <div class="stat-card">
-        <div class="stat-icon cyan">
-          <i class="fa-solid fa-bullseye"></i>
-        </div>
-
-        <div class="stat-info">
-          <p>Opportunity Score</p>
-          <h2>
-            <span class="counter" data-target="82">0</span>%
-          </h2>
-
-          <small>High growth potential</small>
-        </div>
-      </div>
-
-    </section>
-
-
-    <!-- High Demand Alert -->
-    <section class="demand-alert">
-
-      <div class="alert-left">
-
-        <div class="alert-icon">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-
-        <div>
-          <h3>High Demand Opportunity Detected</h3>
-
-          <p>
-            Several products have high customer search interest but
-            critically low inventory.
-          </p>
-        </div>
-
-      </div>
-
-      <button onclick="showGaps()">
-        View Demand Gaps
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-
-    </section>
-
-
-    <!-- Search and Filter -->
-    <section class="controls">
-
-      <div class="search-box">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search products..."
-          onkeyup="applyFilters()"
-        />
-
-      </div>
-
-
-      <select id="filterSelect" onchange="applyFilters()">
-        <option value="all">All Products</option>
-        <option value="gap">Unmet Demand</option>
-        <option value="high">High Demand</option>
-        <option value="available">Available</option>
-      </select>
-
-    </section>
-
-
-    <!-- Demand Visualization -->
-    <section class="visualization">
-
-      <div class="section-header">
-
-        <div>
-          <p class="section-label">DEMAND INSIGHTS</p>
-
-          <h2>Search Interest vs Inventory</h2>
-
-          <p>
-            Identify the biggest opportunities by comparing customer demand
-            with available stock.
-          </p>
-        </div>
-
-        <div class="legend">
-          <span>
-            <i class="legend-search"></i>
-            Search Demand
-          </span>
-
-          <span>
-            <i class="legend-inventory"></i>
-            Inventory
-          </span>
-        </div>
-
-      </div>
-
-
-      <div class="chart-list">
-
-        <div class="chart-item">
-
-          <div class="chart-title">
-            <strong>Wireless Headphones</strong>
-
-            <span class="high-gap">
-              High Gap
-            </span>
-          </div>
-
-          <div class="bar-row">
-
-            <span>Searches</span>
-
-            <div class="bar">
-              <div class="bar-fill search-bar" style="width: 100%">
-                <span>2,450</span>
-              </div>
             </div>
 
-          </div>
 
-          <div class="bar-row">
+            <div class="nav-label">MENU</div>
 
-            <span>Stock</span>
+            <nav>
 
-            <div class="bar">
-              <div class="bar-fill inventory-bar" style="width: 8%">
-                <span>12</span>
-              </div>
+                <a href="#dashboard" class="nav-link active">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-grid-2"></i>
+                    </span>
+                    <span>Dashboard</span>
+                    <div class="active-dot"></div>
+                </a>
+
+
+                <a href="#insights" class="nav-link">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </span>
+                    <span>Demand Insights</span>
+                </a>
+
+
+                <a href="#products" class="nav-link">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-cubes"></i>
+                    </span>
+                    <span>Products</span>
+                </a>
+
+
+                <a href="#gaps" class="nav-link">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+                    <span>Demand Gaps</span>
+                </a>
+
+
+                <a href="#analytics" class="nav-link">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </span>
+                    <span>Analytics</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="upgrade-card">
+
+                    <div class="upgrade-orb"></div>
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    <h4>Unlock AI Insights</h4>
+
+                    <p>
+                        Get smarter demand predictions.
+                    </p>
+
+                    <button>Upgrade</button>
+
+                </div>
+
             </div>
 
-          </div>
-
-        </div>
+        </aside>
 
 
-        <div class="chart-item">
-
-          <div class="chart-title">
-            <strong>iPhone Charger</strong>
-
-            <span class="high-gap">
-              High Gap
-            </span>
-          </div>
-
-          <div class="bar-row">
-
-            <span>Searches</span>
-
-            <div class="bar">
-              <div class="bar-fill search-bar" style="width: 85%">
-                <span>1,750</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="bar-row">
-
-            <span>Stock</span>
-
-            <div class="bar">
-              <div class="bar-fill inventory-bar" style="width: 5%">
-                <span>5</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+        <!-- MAIN -->
+        <main id="dashboard" class="main">
 
 
-        <div class="chart-item">
+            <!-- TOP BAR -->
+            <header class="topbar">
 
-          <div class="chart-title">
-            <strong>Gaming Keyboard</strong>
+                <div class="page-title">
 
-            <span class="low-gap">
-              Balanced
-            </span>
-          </div>
+                    <div class="live-pill">
+                        <span></span>
+                        LIVE INTELLIGENCE
+                    </div>
 
-          <div class="bar-row">
+                    <h1>
+                        See what your customers
+                        <span>really want.</span>
+                    </h1>
 
-            <span>Searches</span>
+                    <p>
+                        Turn search behavior into smarter inventory decisions.
+                    </p>
 
-            <div class="bar">
-              <div class="bar-fill search-bar" style="width: 75%">
-                <span>1,980</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="bar-row">
-
-            <span>Stock</span>
-
-            <div class="bar">
-              <div class="bar-fill inventory-bar" style="width: 70%">
-                <span>245</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Product Table -->
-    <section class="table-section" id="demandTable">
-
-      <div class="section-header">
-
-        <div>
-
-          <p class="section-label">
-            PRODUCT ANALYSIS
-          </p>
-
-          <h2>Demand Gap Opportunities</h2>
-
-          <p>
-            Products ranked by the difference between search demand and inventory.
-          </p>
-
-        </div>
-
-        <div class="live-indicator">
-          <span></span>
-          Live Data
-        </div>
-
-      </div>
-
-
-      <div class="table-container">
-
-        <table>
-
-          <thead>
-
-            <tr>
-              <th>Product</th>
-              <th>Search Interest</th>
-              <th>Inventory</th>
-              <th>Demand Gap</th>
-              <th>Status</th>
-            </tr>
-
-          </thead>
-
-
-          <tbody id="productTable">
-
-            <tr data-status="gap">
-
-              <td>
-                <div class="product">
-                  <div class="product-icon">
-                    🎧
-                  </div>
-
-                  <strong>Wireless Headphones</strong>
                 </div>
-              </td>
 
-              <td>
-                <strong>2,450</strong>
-                <small>searches</small>
-              </td>
 
-              <td>
-                <strong>12</strong>
-                <small>units</small>
-              </td>
+                <div class="header-actions">
 
-              <td>
-                <div class="gap-score high">
-                  <div class="gap-progress">
-                    <span style="width: 95%"></span>
-                  </div>
+                    <button class="notification">
+                        <i class="fa-regular fa-bell"></i>
+                        <span></span>
+                    </button>
 
-                  <strong>95%</strong>
+
+                    <button class="profile">
+
+                        <div class="profile-avatar">
+                            SO
+                        </div>
+
+                        <div class="profile-info">
+                            <strong>Store Owner</strong>
+                            <small>Admin Workspace</small>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
                 </div>
-              </td>
 
-              <td>
-                <span class="status danger">
-                  <i class="fa-solid fa-circle"></i>
-                  Unmet Demand
-                </span>
-              </td>
-
-            </tr>
+            </header>
 
 
-            <tr data-status="available">
+            <!-- HERO -->
+            <section class="hero">
 
-              <td>
-                <div class="product">
-                  <div class="product-icon">
-                    ⌨️
-                  </div>
+                <div class="hero-content">
 
-                  <strong>Gaming Keyboard</strong>
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-sparkles"></i>
+                        AI DEMAND DISCOVERY
+                    </div>
+
+                    <h2>
+                        Stop guessing.
+                        <br>
+                        <span>Start seeing demand.</span>
+                    </h2>
+
+                    <p>
+                        DemandGap connects customer searches with inventory
+                        data to reveal products your customers want but
+                        cannot find.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <button class="primary-btn"
+                            onclick="scrollToGaps()">
+
+                            <span>Explore Demand Gaps</span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <button class="secondary-btn"
+                            onclick="showUploadMessage()">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Connect Data
+
+                        </button>
+
+                    </div>
+
                 </div>
-              </td>
 
-              <td>
-                <strong>1,980</strong>
-                <small>searches</small>
-              </td>
 
-              <td>
-                <strong>245</strong>
-                <small>units</small>
-              </td>
+                <!-- FLOATING VISUAL -->
+                <div class="hero-visual">
 
-              <td>
-                <div class="gap-score low">
-                  <div class="gap-progress">
-                    <span style="width: 20%"></span>
-                  </div>
+                    <div class="radar">
 
-                  <strong>20%</strong>
+                        <div class="radar-ring ring-one"></div>
+                        <div class="radar-ring ring-two"></div>
+                        <div class="radar-ring ring-three"></div>
+
+                        <div class="radar-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <div class="radar-dot dot-one"></div>
+                        <div class="radar-dot dot-two"></div>
+                        <div class="radar-dot dot-three"></div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-one">
+
+                        <div class="mini-icon">
+                            🔥
+                        </div>
+
+                        <div>
+                            <small>Trending</small>
+                            <strong>+128%</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-two">
+
+                        <div class="mini-icon blue">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <small>Stock Gap</small>
+                            <strong>1,240</strong>
+                        </div>
+
+                    </div>
+
                 </div>
-              </td>
 
-              <td>
-                <span class="status success">
-                  <i class="fa-solid fa-circle"></i>
-                  Available
-                </span>
-              </td>
-
-            </tr>
+            </section>
 
 
-            <tr data-status="gap">
+            <!-- STATS -->
+            <section class="stats-grid">
 
-              <td>
-                <div class="product">
-                  <div class="product-icon">
-                    🔌
-                  </div>
 
-                  <strong>iPhone Charger</strong>
+                <div class="stat-card">
+
+                    <div class="card-glow"></div>
+
+                    <div class="stat-top">
+
+                        <span>Total Searches</span>
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                    </div>
+
+                    <h2 class="counter" data-target="12450">0</h2>
+
+                    <div class="stat-bottom positive">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>18.4%</span>
+                        <small>vs last month</small>
+                    </div>
+
                 </div>
-              </td>
 
-              <td>
-                <strong>1,750</strong>
-                <small>searches</small>
-              </td>
 
-              <td>
-                <strong>5</strong>
-                <small>units</small>
-              </td>
+                <div class="stat-card danger-card">
 
-              <td>
-                <div class="gap-score high">
-                  <div class="gap-progress">
-                    <span style="width: 98%"></span>
-                  </div>
+                    <div class="card-glow"></div>
 
-                  <strong>98%</strong>
+                    <div class="stat-top">
+
+                        <span>Unmet Demand</span>
+
+                        <div class="stat-icon pink">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                    </div>
+
+                    <h2 class="counter" data-target="1240">0</h2>
+
+                    <div class="stat-bottom">
+                        <span class="pulse-dot"></span>
+                        <span>12 opportunities detected</span>
+                    </div>
+
                 </div>
-              </td>
-
-              <td>
-                <span class="status danger">
-                  <i class="fa-solid fa-circle"></i>
-                  Unmet Demand
-                </span>
-              </td>
-
-            </tr>
 
 
-            <tr data-status="high">
+                <div class="stat-card">
 
-              <td>
-                <div class="product">
-                  <div class="product-icon">
-                    🔊
-                  </div>
+                    <div class="card-glow"></div>
 
-                  <strong>Bluetooth Speaker</strong>
+                    <div class="stat-top">
+
+                        <span>Low Inventory</span>
+
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+
+                    </div>
+
+                    <h2 class="counter" data-target="8">0</h2>
+
+                    <div class="stat-bottom">
+                        <span>Products need attention</span>
+                    </div>
+
                 </div>
-              </td>
 
-              <td>
-                <strong>1,620</strong>
-                <small>searches</small>
-              </td>
 
-              <td>
-                <strong>30</strong>
-                <small>units</small>
-              </td>
+                <div class="stat-card score-card">
 
-              <td>
-                <div class="gap-score medium">
-                  <div class="gap-progress">
-                    <span style="width: 70%"></span>
-                  </div>
+                    <div class="card-glow"></div>
 
-                  <strong>70%</strong>
+                    <div class="stat-top">
+
+                        <span>Opportunity Score</span>
+
+                        <div class="stat-icon cyan">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+
+                    </div>
+
+                    <h2>
+                        <span class="counter"
+                            data-target="82">0</span>%
+                    </h2>
+
+                    <div class="score-line">
+                        <span></span>
+                    </div>
+
+                    <div class="stat-bottom positive">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        High growth potential
+                    </div>
+
                 </div>
-              </td>
 
-              <td>
-                <span class="status warning">
-                  <i class="fa-solid fa-circle"></i>
-                  Low Stock
-                </span>
-              </td>
-
-            </tr>
+            </section>
 
 
-            <tr data-status="available">
+            <!-- ALERT -->
+            <section id="gaps" class="opportunity-alert">
 
-              <td>
-                <div class="product">
-                  <div class="product-icon">
-                    💻
-                  </div>
+                <div class="alert-orb"></div>
 
-                  <strong>Laptop Stand</strong>
+                <div class="alert-icon">
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
-              </td>
 
-              <td>
-                <strong>980</strong>
-                <small>searches</small>
-              </td>
+                <div class="alert-content">
 
-              <td>
-                <strong>150</strong>
-                <small>units</small>
-              </td>
+                    <div class="alert-title">
 
-              <td>
-                <div class="gap-score low">
-                  <div class="gap-progress">
-                    <span style="width: 25%"></span>
-                  </div>
+                        <span>HIGH OPPORTUNITY DETECTED</span>
 
-                  <strong>25%</strong>
+                        <div class="new-badge">
+                            NEW
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        Your customers are searching for products
+                        you barely have in stock.
+                    </h3>
+
+                    <p>
+                        We found <strong>12 products</strong> with
+                        high search demand and critically low inventory.
+                    </p>
+
                 </div>
-              </td>
 
-              <td>
-                <span class="status success">
-                  <i class="fa-solid fa-circle"></i>
-                  Available
-                </span>
-              </td>
+                <button onclick="showGaps()">
+                    See Opportunities
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
 
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    </section>
+            </section>
 
 
-    <!-- Recommendation -->
-    <section class="recommendation">
+            <!-- INSIGHTS -->
+            <section id="insights" class="section-block">
 
-      <div class="recommendation-icon">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-      </div>
+                <div class="section-heading">
 
-      <div>
+                    <div>
 
-        <p class="section-label">
-          AI RECOMMENDATION
-        </p>
+                        <span class="eyebrow">
+                            DEMAND INTELLIGENCE
+                        </span>
 
-        <h2>Increase inventory for high-demand products</h2>
+                        <h2>
+                            Where demand meets reality.
+                        </h2>
 
-        <p>
-          <strong>Wireless Headphones</strong> and
-          <strong>iPhone Chargers</strong> show the largest demand gaps.
-          Restocking these products could help capture potential sales that
-          may currently be lost due to insufficient inventory.
-        </p>
+                        <p>
+                            Search interest compared with your
+                            available inventory.
+                        </p>
 
-      </div>
+                    </div>
 
-    </section>
 
-  </main>
+                    <div class="legend">
 
-  <script src="script.js"></script>
+                        <span>
+                            <i class="search-dot"></i>
+                            Search Demand
+                        </span>
 
-</body>
-                               </html>
+                        <span>
+                            <i class="stock-dot"></i>
+                            Inventory
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INSIGHT CARD -->
+                <div class="insight-card">
+
+                    <div class="chart-product">
+
+                        <div class="product-emoji">
+                            🎧
+                        </div>
+
+                        <div>
+                            <strong>
+                                Wireless Headphones
+                            </strong>
+
+                            <span>
+                                Biggest demand opportunity
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-bars">
+
+                        <div class="chart-row">
+
+                            <div class="chart-label">
+                                <span>Searches</span>
+                                <strong>2,450</strong>
+                            </div>
+
+                            <div class="bar-track">
+
+                                <div class="animated-bar demand"
+                                    data-width="100">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <div class="chart-label">
+                                <span>Inventory</span>
+                                <strong>12</strong>
+                            </div>
+
+                            <div class="bar-track">
+
+                                <div class="animated-bar stock"
+                                    data-width="8">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gap-circle">
+
+                        <svg viewBox="0 0 100 100">
+
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="40"
+                                class="circle-bg"
+                            />
+
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="40"
+                                class="circle-progress"
+                            />
+
+                        </svg>
+
+                        <div>
+                            <strong>95%</strong>
+                            <span>Gap</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mini-insights">
+
+                    <div class="mini-insight">
+
+                        <div class="mini-product">
+                            🔌
+                        </div>
+
+                        <div class="mini-info">
+
+                            <strong>iPhone Charger</strong>
+
+                            <span>
+                                1,750 searches · 5 units
+                            </span>
+
+                        </div>
+
+                        <div class="mini-gap high">
+                            98% GAP
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-insight">
+
+                        <div class="mini-product">
+                            🔊
+                        </div>
+
+                        <div class="mini-info">
+
+                            <strong>Bluetooth Speaker</strong>
+
+                            <span>
+                                1,620 searches · 30 units
+                            </span>
+
+                        </div>
+
+                        <div class="mini-gap medium">
+                            70% GAP
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-insight">
+
+                        <div class="mini-product">
+                            ⌨️
+                        </div>
+
+                        <div class="mini-info">
+
+                            <strong>Gaming Keyboard</strong>
+
+                            <span>
+                                1,980 searches · 245 units
+                            </span>
+
+                        </div>
+
+                        <div class="mini-gap good">
+                            BALANCED
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUCTS -->
+            <section id="products" class="section-block product-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PRODUCT DISCOVERY
+                        </span>
+
+                        <h2>
+                            Demand opportunities
+                        </h2>
+
+                        <p>
+                            Products ranked by potential opportunity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="filters">
+
+                        <div class="search-input">
+
+                            <i class="fa-solid fa-search"></i>
+
+                            <input
+                                id="searchInput"
+                                type="text"
+                                placeholder="Search products..."
+                            >
+
+                        </div>
+
+
+                        <select id="filterSelect">
+
+                            <option value="all">
+                                All Products
+                            </option>
+
+                            <option value="gap">
+                                Unmet Demand
+                            </option>
+
+                            <option value="high">
+                                Low Stock
+                            </option>
+
+                            <option value="available">
+                                Available
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product-table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Product</th>
+                                <th>Search Interest</th>
+                                <th>Inventory</th>
+                                <th>Demand Gap</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productTable">
+
+                            <tr data-status="gap">
+
+                                <td>
+
+                                    <div class="table-product">
+
+                                        <div class="table-icon">
+                                            🎧
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Wireless Headphones
+                                            </strong>
+
+                                            <small>
+                                                Electronics
+                                            </small>
+
+                                        </div>
+
+                                    </div>
