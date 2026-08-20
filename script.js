@@ -1,93 +1,68 @@
-/* ==============================
-   GLOBAL
-============================== */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+function generateReport() {
 
-  /* LIGHT BLUE BACKGROUND */
-  background: linear-gradient(
-    135deg,
-    #eaf8ff,
-    #dff4ff,
-    #f5fcff
-  );
+    alert(
+        "📊 Demand Report Generated!\n\n" +
+        "Your report contains:\n" +
+        "• High-demand products\n" +
+        "• Low inventory products\n" +
+        "• Search interest\n" +
+        "• Estimated missed sales"
+    );
 
-  color: #17324d;
-  min-height: 100vh;
 }
 
 
-/* ==============================
-   APP
-============================== */
+// ==============================
+// NAVIGATION
+// ==============================
 
-.app {
-  min-height: 100vh;
-  display: flex;
-}
+const navLinks = document.querySelectorAll("nav a");
 
+navLinks.forEach(function(link) {
 
-/* ==============================
-   SIDEBAR
-============================== */
+    link.addEventListener("click", function(event) {
 
-.sidebar {
-  width: 245px;
+        event.preventDefault();
 
-  background: rgba(255, 255, 255, 0.95);
+        navLinks.forEach(function(item) {
+            item.classList.remove("active");
+        });
 
-  border-right: 1px solid #d5edf8;
+        this.classList.add("active");
 
-  padding: 25px 16px;
+    });
 
-  position: fixed;
-
-  left: 0;
-  top: 0;
-  bottom: 0;
-}
+});
 
 
-/* LOGO */
+// ==============================
+// SIMPLE DASHBOARD ANIMATION
+// ==============================
 
-.logo {
-  display: flex;
-  align-items: center;
+window.addEventListener("load", function() {
 
-  gap: 10px;
+    const cards = document.querySelectorAll(".stat-card");
 
-  margin: 0 10px 35px;
+    cards.forEach(function(card, index) {
 
-  font-size: 21px;
+        card.style.opacity = "0";
+        card.style.transform = "translateY(15px)";
 
-  font-weight: 800;
+        setTimeout(function() {
 
-  color: #087bb9;
-}
+            card.style.transition =
+                "all 0.5s ease";
 
-.logo-icon {
-  width: 38px;
-  height: 38px;
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
 
-  border-radius: 12px;
+        }, index * 120);
 
-  display: grid;
-  place-items: center;
+    });
 
-  background: linear-gradient(
-    135deg,
-    #83d9fa,
-    #bceeff
-  );
-
-  color: #087bb9;
+});  color: #087bb9;
 
   font-size: 20px;
 }
