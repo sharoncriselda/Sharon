@@ -1,186 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DemandGap - Customer Demand Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DemandLens - Unmet Demand Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <div class="app">
 
     <!-- Sidebar -->
     <aside class="sidebar">
-        <h2>DemandGap</h2>
-        <p class="subtitle">Retail Intelligence</p>
 
-        <nav>
-            <a href="#" class="active">📊 Dashboard</a>
-            <a href="#">🔍 Search Demand</a>
-            <a href="#">📦 Inventory</a>
-            <a href="#">⚠️ Demand Gaps</a>
-            <a href="#">📈 Analytics</a>
-        </nav>
+      <div class="logo">
+        <div class="logo-icon">◈</div>
+        <span>DemandLens</span>
+      </div>
+
+      <nav>
+        <a href="#" class="active">🏠 <span>Dashboard</span></a>
+        <a href="#">🔍 <span>Demand Gaps</span></a>
+        <a href="#">📦 <span>Inventory</span></a>
+        <a href="#">📊 <span>Analytics</span></a>
+        <a href="#">⚙️ <span>Settings</span></a>
+      </nav>
+
+      <div class="side-card">
+        <small>💡 Smart Insight</small>
+        <p>
+          12 products have high search interest but low stock.
+        </p>
+      </div>
+
     </aside>
 
+
     <!-- Main Content -->
-    <main class="main-content">
+    <main>
 
-        <header>
-            <div>
-                <h1>Customer Demand Dashboard</h1>
-                <p>Identify products customers want but cannot find.</p>
+      <!-- Header -->
+      <header>
+
+        <div>
+          <h1>Unmet Demand Dashboard</h1>
+
+          <p class="subtitle">
+            Turn customer search interest into smarter inventory decisions.
+          </p>
+        </div>
+
+        <div class="user">
+          <div class="avatar">S</div>
+          <span>Store Owner</span>
+        </div>
+
+      </header>
+
+
+      <!-- Statistics -->
+      <section class="stats">
+
+        <div class="card stat-card">
+          <div class="stat-label">SEARCHES THIS WEEK</div>
+          <div class="stat-value">18.4K</div>
+          <div class="trend">↑ 14.8% vs last week</div>
+        </div>
+
+        <div class="card stat-card">
+          <div class="stat-label">DEMAND GAPS</div>
+          <div class="stat-value">42</div>
+          <div class="trend">↑ 8 new opportunities</div>
+        </div>
+
+        <div class="card stat-card">
+          <div class="stat-label">LOW-STOCK PRODUCTS</div>
+          <div class="stat-value">27</div>
+          <div class="warning">Needs attention</div>
+        </div>
+
+        <div class="card stat-card">
+          <div class="stat-label">EST. MISSED SALES</div>
+          <div class="stat-value">₹1.84L</div>
+          <div class="trend">Potential revenue</div>
+        </div>
+
+      </section>
+
+
+      <!-- Dashboard -->
+      <section class="dashboard">
+
+        <!-- Chart -->
+        <div class="card">
+
+          <div class="card-title">
+
+            <h2>Search Interest vs Inventory</h2>
+
+            <span class="pill">
+              Last 7 days
+            </span>
+
+          </div>
+
+
+          <div class="chart">
+
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:48%"></div>
+              <div class="bar inventory-bar" style="height:24%"></div>
+              <span>Mon</span>
             </div>
 
-            <button class="upload-btn" onclick="showUploadMessage()">
-                + Upload Data
-            </button>
-        </header>
-
-        <!-- Statistics Cards -->
-        <section class="stats">
-
-            <div class="card">
-                <div class="icon">🔍</div>
-                <div>
-                    <p>Total Searches</p>
-                    <h2 id="totalSearches">12,450</h2>
-                </div>
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:64%"></div>
+              <div class="bar inventory-bar" style="height:28%"></div>
+              <span>Tue</span>
             </div>
 
-            <div class="card">
-                <div class="icon">⚠️</div>
-                <div>
-                    <p>Unmet Demand</p>
-                    <h2 id="unmetDemand">1,240</h2>
-                </div>
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:72%"></div>
+              <div class="bar inventory-bar" style="height:34%"></div>
+              <span>Wed</span>
             </div>
 
-            <div class="card">
-                <div class="icon">📦</div>
-                <div>
-                    <p>Low Inventory</p>
-                    <h2>8 Products</h2>
-                </div>
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:83%"></div>
+              <div class="bar inventory-bar" style="height:31%"></div>
+              <span>Thu</span>
             </div>
 
-            <div class="card">
-                <div class="icon">💰</div>
-                <div>
-                    <p>Opportunity Score</p>
-                    <h2>82%</h2>
-                </div>
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:77%"></div>
+              <div class="bar inventory-bar" style="height:38%"></div>
+              <span>Fri</span>
             </div>
 
-        </section>
-
-        <!-- Alert -->
-        <section class="alert">
-            <div>
-                <h3>⚠ High Demand Opportunity</h3>
-                <p>
-                    Several products are being searched frequently but have low or zero inventory.
-                </p>
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:91%"></div>
+              <div class="bar inventory-bar" style="height:35%"></div>
+              <span>Sat</span>
             </div>
 
-            <button onclick="showGaps()">View Demand Gaps</button>
-        </section>
-
-        <!-- Search -->
-        <section class="controls">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search for a product..."
-                onkeyup="searchProducts()"
-            >
-
-            <select id="filterSelect" onchange="filterProducts()">
-                <option value="all">All Products</option>
-                <option value="high">High Demand</option>
-                <option value="gap">Demand Gap</option>
-                <option value="available">Available</option>
-            </select>
-        </section>
-
-        <!-- Table -->
-        <section class="table-section">
-
-            <div class="section-title">
-                <h2>Product Demand Analysis</h2>
-                <p>Compare customer search interest with inventory.</p>
+            <div class="bar-wrap">
+              <div class="bar demand-bar" style="height:86%"></div>
+              <div class="bar inventory-bar" style="height:30%"></div>
+              <span>Sun</span>
             </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Search Interest</th>
-                        <th>Inventory</th>
-                        <th>Demand Gap</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
+          </div>
 
-                <tbody id="productTable">
 
-                    <tr data-status="gap">
-                        <td>Wireless Headphones</td>
-                        <td>2,450 searches</td>
-                        <td>12 units</td>
-                        <td class="gap-high">High</td>
-                        <td><span class="status danger">Unmet Demand</span></td>
-                    </tr>
+          <div class="legend">
 
-                    <tr data-status="available">
-                        <td>Gaming Keyboard</td>
-                        <td>1,980 searches</td>
-                        <td>245 units</td>
-                        <td class="gap-low">Low</td>
-                        <td><span class="status success">Available</span></td>
-                    </tr>
+            <span>
+              <i class="dot demand"></i>
+              Search Interest
+            </span>
 
-                    <tr data-status="gap">
-                        <td>iPhone Charger</td>
-                        <td>1,750 searches</td>
-                        <td>5 units</td>
-                        <td class="gap-high">High</td>
-                        <td><span class="status danger">Unmet Demand</span></td>
-                    </tr>
+            <span>
+              <i class="dot stock"></i>
+              Inventory
+            </span>
 
-                    <tr data-status="high">
-                        <td>Bluetooth Speaker</td>
-                        <td>1,620 searches</td>
-                        <td>30 units</td>
-                        <td class="gap-medium">Medium</td>
-                        <td><span class="status warning">Low Stock</span></td>
-                    </tr>
+          </div>
 
-                    <tr data-status="available">
-                        <td>Laptop Stand</td>
-                        <td>980 searches</td>
-                        <td>150 units</td>
-                        <td class="gap-low">Low</td>
-                        <td><span class="status success">Available</span></td>
-                    </tr>
+        </div>
 
-                </tbody>
-            </table>
 
-        </section>
+        <!-- Opportunities -->
+        <div class="card">
 
-        <!-- Recommendation -->
-        <section class="recommendation">
-            <h2>💡 Recommended Action</h2>
-            <p id="recommendationText">
-                Increase inventory for <strong>Wireless Headphones</strong> and
-                <strong>iPhone Chargers</strong>. These products have high search
-                interest but very low inventory.
-            </p>
-        </section>
+          <div class="card-title">
+
+            <h2>Top Demand Opportunities</h2>
+
+            <span class="pill">
+              AI Insight
+            </span>
+
+          </div>
+
+
+          <div class="opportunity">
+
+            <div class="product">
+
+              <div class="product-icon">🎧</div>
+
+              <div>
+                <h3>Wireless Headphones</h3>
+                <p>2,840 searches · 18 in stock</p>
+              </div>
+
+              <strong>High</strong>
+
+            </div>
+
+
+            <div class="product">
+
+              <div class="product-icon">⌚</div>
+
+              <div>
+                <h3>Smart Watch</h3>
+                <p>2,310 searches · 24 in stock</p>
+              </div>
+
+              <strong>High</strong>
+
+            </div>
+
+
+            <div class="product">
+
+              <div class="product-icon">🎒</div>
+
+              <div>
+                <h3>Travel Backpack</h3>
+                <p>1,920 searches · 31 in stock</p>
+              </div>
+
+              <strong class="medium">Medium</strong>
+
+            </div>
+
+
+            <div class="product">
+
+              <div class="product-icon">👟</div>
+
+              <div>
+                <h3>Running Shoes</h3>
+                <p>1,740 searches · 12 in stock</p>
+              </div>
+
+              <strong>High</strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Product Table -->
+      <section class="card table-card">
+
+        <div class="card-title">
+
+          <h2>Demand Gap Products</h2>
+
+          <button class="btn" onclick="generateReport()">
+            Generate Report
+          </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>Product</th>
+                <th>Searches</th>
+                <th>Stock</th>
+                <th>Demand / Stock</th>
+                <th>Opportunity</th>
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              <tr>
+                <td><b>Wireless Headphones</b></td>
+                <td>2,840</td>
+                <td>18 units</td>
+
+                <td>
+                  <div class="progress">
+                    <span style="width:92%"></span>
+                  </div>
+                </td>
+
+                <td>
+                  <span class="status">High</span>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td><b>Smart Watch</b></td>
+                <td>2,310</td>
+                <td>24 units</td>
+
+                <td>
+                  <div class="progress">
+                    <span style="width:81%"></span>
+                  </div>
+                </td>
+
+                <td>
+                  <span class="status">High</span>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td><b>Travel Backpack</b></td>
+                <td>1,920</td>
+                <td>31 units</td>
+
+                <td>
+                  <div class="progress">
+                    <span style="width:67%"></span>
+                  </div>
+                </td>
+
+                <td>
+                  <span class="status medium-status">
+                    Medium
+                  </span>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td><b>Running Shoes</b></td>
+                <td>1,740</td>
+                <td>12 units</td>
+
+                <td>
+                  <div class="progress">
+                    <span style="width:88%"></span>
+                  </div>
+                </td>
+
+                <td>
+                  <span class="status">High</span>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
 
     </main>
 
-    <script src="script.js"></script>
+  </div>
+
+
+  <script src="script.js"></script>
 
 </body>
-</html>
+          </html>
